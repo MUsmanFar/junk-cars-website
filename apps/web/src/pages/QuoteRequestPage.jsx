@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Clock, Shield, Phone } from 'lucide-react';
@@ -13,6 +14,20 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 
 const QuoteRequestPage = () => {
+  const [searchParams] = useSearchParams();
+
+  const getNormalizedCategory = (cat) => {
+    if (!cat) return '';
+    const lower = cat.toLowerCase();
+    if (lower === 'engines' || lower === 'engine') return 'engine';
+    if (lower === 'transmissions' || lower === 'transmission') return 'transmission';
+    if (lower === 'body parts' || lower === 'body') return 'body';
+    if (lower === 'wheels') return 'wheels';
+    if (lower === 'radiators' || lower === 'radiator') return 'radiator';
+    if (lower === 'electrical') return 'electrical';
+    return 'other';
+  };
+
   const [formData, setFormData] = useState({
     make: '',
     model: '',
@@ -27,8 +42,36 @@ const QuoteRequestPage = () => {
     additionalInfo: ''
   });
 
+  // Load URL query params on mount
+  useEffect(() => {
+    const part = searchParams.get('part') || '';
+    const category = searchParams.get('category') || '';
+    const make = searchParams.get('make') || '';
+    const model = searchParams.get('model') || '';
+    const year = searchParams.get('year') || '';
+
+    setFormData(prev => ({
+      ...prev,
+      specificPart: part,
+      partCategory: getNormalizedCategory(category),
+      make: make,
+      model: model,
+      year: year
+    }));
+  }, [searchParams]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.specificPart.trim()) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    console.log('Sending quote request to API database:', formData);
     toast.success('Quote request submitted. We will respond within 2 hours during business hours.');
     setFormData({
       make: '',
@@ -50,7 +93,7 @@ const QuoteRequestPage = () => {
   };
 
   const handleSelectChange = (name, value) => {
-    setFormData({ ...formData, [name]: value });
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const guarantees = [

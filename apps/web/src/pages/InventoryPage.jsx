@@ -12,7 +12,18 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 
 const InventoryPage = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedMake, setSelectedMake] = useState('all');
+  const [selectedModel, setSelectedModel] = useState('all');
+  const [selectedYear, setSelectedYear] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [vinQuery, setVinQuery] = useState('');
+  const [activeFilters, setActiveFilters] = useState({
+    make: 'all',
+    model: 'all',
+    year: 'all',
+    category: 'all',
+    vin: ''
+  });
 
   const categories = [
     { name: 'Engines', icon: Cog, count: '500+', color: 'from-orange-500/20 to-red-500/20' },
@@ -27,6 +38,9 @@ const InventoryPage = () => {
     {
       title: '2018 Ford F-150 5.0L V8 engine',
       category: 'Engines',
+      make: 'ford',
+      model: 'f150',
+      year: '2018',
       mileage: '87,400 miles',
       condition: 'Tested & verified',
       price: '$2,850',
@@ -35,6 +49,9 @@ const InventoryPage = () => {
     {
       title: '2020 Honda Accord CVT transmission',
       category: 'Transmissions',
+      make: 'honda',
+      model: 'accord',
+      year: '2020',
       mileage: '42,100 miles',
       condition: 'Road tested',
       price: '$1,650',
@@ -43,6 +60,9 @@ const InventoryPage = () => {
     {
       title: '2019 Toyota Camry front bumper assembly',
       category: 'Body parts',
+      make: 'toyota',
+      model: 'camry',
+      year: '2019',
       mileage: 'N/A',
       condition: 'Excellent condition',
       price: '$385',
@@ -51,6 +71,9 @@ const InventoryPage = () => {
     {
       title: '2021 Chevrolet Silverado 20" OEM wheels (set of 4)',
       category: 'Wheels',
+      make: 'chevrolet',
+      model: 'silverado',
+      year: '2021',
       mileage: 'N/A',
       condition: 'Like new',
       price: '$1,200',
@@ -59,6 +82,9 @@ const InventoryPage = () => {
     {
       title: '2017 Nissan Altima radiator assembly',
       category: 'Radiators',
+      make: 'nissan',
+      model: 'altima',
+      year: '2017',
       mileage: 'N/A',
       condition: 'Pressure tested',
       price: '$195',
@@ -67,12 +93,72 @@ const InventoryPage = () => {
     {
       title: '2019 Jeep Wrangler alternator',
       category: 'Electrical',
+      make: 'jeep',
+      model: 'wrangler',
+      year: '2019',
       mileage: '52,300 miles',
       condition: 'Bench tested',
       price: '$165',
       image: 'https://images.unsplash.com/photo-1600188881015-c01168ab7a4a'
     }
   ];
+
+  const handleSearch = () => {
+    setActiveFilters({
+      make: selectedMake,
+      model: selectedModel,
+      year: selectedYear,
+      category: selectedCategory,
+      vin: vinQuery
+    });
+    
+    // Smooth scroll down to results
+    const element = document.getElementById('parts-display');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleCategoryClick = (categoryName) => {
+    const formatted = categoryName.toLowerCase();
+    setSelectedCategory(formatted);
+    setActiveFilters(prev => ({
+      ...prev,
+      category: formatted
+    }));
+    
+    const element = document.getElementById('parts-display');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleReset = () => {
+    setSelectedMake('all');
+    setSelectedModel('all');
+    setSelectedYear('all');
+    setSelectedCategory('all');
+    setVinQuery('');
+    setActiveFilters({
+      make: 'all',
+      model: 'all',
+      year: 'all',
+      category: 'all',
+      vin: ''
+    });
+  };
+
+  const filteredParts = featuredParts.filter(part => {
+    if (activeFilters.make !== 'all' && part.make !== activeFilters.make) return false;
+    if (activeFilters.model !== 'all' && part.model !== activeFilters.model) return false;
+    if (activeFilters.year !== 'all' && part.year !== activeFilters.year) return false;
+    if (activeFilters.category !== 'all' && part.category.toLowerCase() !== activeFilters.category) return false;
+    if (activeFilters.vin.trim() !== '') {
+      const matchText = (part.title + ' ' + part.category).toLowerCase();
+      if (!matchText.includes(activeFilters.vin.toLowerCase())) return false;
+    }
+    return true;
+  });
 
   return (
     <>
@@ -119,11 +205,12 @@ const InventoryPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-white mb-2">Make</label>
-                <Select>
+                <Select value={selectedMake} onValueChange={setSelectedMake}>
                   <SelectTrigger className="bg-background/50 border-border text-white">
                     <SelectValue placeholder="Select make" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="all">All Makes</SelectItem>
                     <SelectItem value="ford">Ford</SelectItem>
                     <SelectItem value="chevrolet">Chevrolet</SelectItem>
                     <SelectItem value="toyota">Toyota</SelectItem>
@@ -136,11 +223,12 @@ const InventoryPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-white mb-2">Model</label>
-                <Select>
+                <Select value={selectedModel} onValueChange={setSelectedModel}>
                   <SelectTrigger className="bg-background/50 border-border text-white">
                     <SelectValue placeholder="Select model" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="all">All Models</SelectItem>
                     <SelectItem value="f150">F-150</SelectItem>
                     <SelectItem value="silverado">Silverado</SelectItem>
                     <SelectItem value="camry">Camry</SelectItem>
@@ -153,11 +241,12 @@ const InventoryPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-white mb-2">Year</label>
-                <Select>
+                <Select value={selectedYear} onValueChange={setSelectedYear}>
                   <SelectTrigger className="bg-background/50 border-border text-white">
                     <SelectValue placeholder="Select year" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="all">All Years</SelectItem>
                     <SelectItem value="2024">2024</SelectItem>
                     <SelectItem value="2023">2023</SelectItem>
                     <SelectItem value="2022">2022</SelectItem>
@@ -172,14 +261,15 @@ const InventoryPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-white mb-2">Part category</label>
-                <Select>
+                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                   <SelectTrigger className="bg-background/50 border-border text-white">
                     <SelectValue placeholder="Select category" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="all">All Categories</SelectItem>
                     <SelectItem value="engines">Engines</SelectItem>
                     <SelectItem value="transmissions">Transmissions</SelectItem>
-                    <SelectItem value="body">Body parts</SelectItem>
+                    <SelectItem value="body parts">Body parts</SelectItem>
                     <SelectItem value="wheels">Wheels</SelectItem>
                     <SelectItem value="radiators">Radiators</SelectItem>
                     <SelectItem value="electrical">Electrical</SelectItem>
@@ -188,18 +278,27 @@ const InventoryPage = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-white mb-2">VIN number (optional)</label>
+                <label className="block text-sm font-medium text-white mb-2">Keyword / Part Search (optional)</label>
                 <Input 
-                  placeholder="Enter VIN for precise matching"
+                  value={vinQuery}
+                  onChange={(e) => setVinQuery(e.target.value)}
+                  placeholder="Enter keyword or parts details"
                   className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
                 />
               </div>
             </div>
 
-            <Button className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg glow-shadow transition-all duration-200 active:scale-95">
-              <Search className="mr-2 w-5 h-5" />
-              Search inventory
-            </Button>
+            <div className="flex gap-4">
+              <Button onClick={handleSearch} className="flex-1 bg-accent hover:bg-accent/90 text-white py-6 text-lg glow-shadow transition-all duration-200 active:scale-95">
+                <Search className="mr-2 w-5 h-5" />
+                Search inventory
+              </Button>
+              {(selectedMake !== 'all' || selectedModel !== 'all' || selectedYear !== 'all' || selectedCategory !== 'all' || vinQuery !== '') && (
+                <Button variant="outline" onClick={handleReset} className="border-border hover:bg-muted text-white px-6 py-6 text-lg transition-all duration-200">
+                  Reset
+                </Button>
+              )}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -230,7 +329,10 @@ const InventoryPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className={`glass-effect border-border hover-3d luxury-shadow group cursor-pointer h-full`}>
+                <Card 
+                  onClick={() => handleCategoryClick(category.name)}
+                  className={`glass-effect border-border hover-3d luxury-shadow group cursor-pointer h-full`}
+                >
                   <CardContent className="p-8">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <category.icon className="w-8 h-8 text-white" />
@@ -249,7 +351,7 @@ const InventoryPage = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-secondary">
+      <section id="parts-display" className="py-24 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -259,56 +361,82 @@ const InventoryPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-              Featured parts
+              {activeFilters.make !== 'all' || activeFilters.model !== 'all' || activeFilters.category !== 'all' || activeFilters.year !== 'all' || activeFilters.vin !== '' 
+                ? 'Search Results' 
+                : 'Featured parts'}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Recently added quality-tested components
+              {activeFilters.make !== 'all' || activeFilters.model !== 'all' || activeFilters.category !== 'all' || activeFilters.year !== 'all' || activeFilters.vin !== ''
+                ? `Showing ${filteredParts.length} parts matching your search criteria`
+                : 'Recently added quality-tested components'}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredParts.map((part, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="glass-effect border-border hover-lift luxury-shadow overflow-hidden group h-full flex flex-col">
-                  <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={part.image} 
-                      alt={part.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="inline-block mb-3 px-3 py-1 rounded-full bg-accent/10 text-xs font-medium text-accent w-fit">
-                      {part.category}
+          {filteredParts.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center p-12 glass-effect rounded-3xl max-w-2xl mx-auto"
+            >
+              <Package className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-white mb-2">No parts found</h3>
+              <p className="text-muted-foreground mb-6">
+                We couldn't find any parts matching your search criteria. However, we have a nationwide sourcing network and can locate it for you!
+              </p>
+              <Link to="/quote-request">
+                <Button className="bg-accent hover:bg-accent/90 text-white px-8 py-4">
+                  Request a custom quote
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </motion.div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredParts.map((part, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="glass-effect border-border hover-lift luxury-shadow overflow-hidden group h-full flex flex-col">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={part.image} 
+                        alt={part.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3 leading-snug">{part.title}</h3>
-                    <div className="space-y-2 mb-4 text-sm text-muted-foreground">
-                      <div className="flex items-center justify-between">
-                        <span>Mileage:</span>
-                        <span className="text-white font-medium">{part.mileage}</span>
+                    <CardContent className="p-6 flex-1 flex flex-col">
+                      <div className="inline-block mb-3 px-3 py-1 rounded-full bg-accent/10 text-xs font-medium text-accent w-fit">
+                        {part.category}
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span>Condition:</span>
-                        <span className="text-white font-medium">{part.condition}</span>
+                      <h3 className="text-lg font-bold text-white mb-3 leading-snug">{part.title}</h3>
+                      <div className="space-y-2 mb-4 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-between">
+                          <span>Mileage:</span>
+                          <span className="text-white font-medium">{part.mileage}</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span>Condition:</span>
+                          <span className="text-white font-medium">{part.condition}</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
-                      <div className="text-2xl font-bold text-accent font-variant-tabular">{part.price}</div>
-                      <Button size="sm" className="bg-accent hover:bg-accent/90 text-white transition-all duration-200 active:scale-95">
-                        Inquire
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                      <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
+                        <div className="text-2xl font-bold text-accent font-variant-tabular">{part.price}</div>
+                        <Link to={`/quote-request?part=${encodeURIComponent(part.title)}&category=${encodeURIComponent(part.category)}&make=${part.make}&model=${part.model}&year=${part.year}`}>
+                          <Button size="sm" className="bg-accent hover:bg-accent/90 text-white transition-all duration-200 active:scale-95">
+                            Inquire
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

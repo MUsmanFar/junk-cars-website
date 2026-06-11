@@ -22,6 +22,16 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    console.log('Sending contact form message to API database:', formData);
     toast.success('Message sent successfully. We will respond within 24 hours.');
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
