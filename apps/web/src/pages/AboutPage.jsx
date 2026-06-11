@@ -53,7 +53,7 @@ const AboutPage = () => {
     {
       name: 'David Martinez',
       role: 'Founder & CEO',
-      bio: 'With 35 years in the automotive industry, David built Brothers Auto Parts on a foundation of quality and trust.',
+      bio: "With 35 years in the automotive industry, David built Frank's Auto Parts on a foundation of quality and trust.",
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
     },
     {
@@ -73,8 +73,8 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Brothers Auto Parts - Our story and commitment to quality</title>
-        <meta name="description" content="Learn about Brothers Auto Parts' 30-year journey providing quality used auto parts. Meet our team and discover our commitment to customer satisfaction." />
+        <title>About Frank's Auto Parts - Our story and commitment to quality</title>
+        <meta name="description" content="Learn about Frank's Auto Parts' 30-year journey providing quality used auto parts. Meet our team and discover our commitment to customer satisfaction." />
       </Helmet>
 
       <Header />
@@ -102,7 +102,7 @@ const AboutPage = () => {
               Our story
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
-              About Brothers Auto Parts
+              About Frank's Auto Parts
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Three decades of providing quality used auto parts with integrity, expertise, and unwavering commitment to customer satisfaction
@@ -124,7 +124,7 @@ const AboutPage = () => {
               <div className="rounded-3xl overflow-hidden luxury-shadow">
                 <img 
                   src="https://images.unsplash.com/photo-1689202865186-50a2014287ca" 
-                  alt="Brothers Auto Parts warehouse facility with organized inventory"
+                  alt="Frank's Auto Parts warehouse facility with organized inventory"
                   className="w-full h-[600px] object-cover"
                 />
               </div>
@@ -142,16 +142,16 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  In 1995, David Martinez opened Brothers Auto Parts with a simple mission: provide mechanics and vehicle owners with reliable, quality-tested used auto parts at fair prices. What began as a modest operation in Dallas has grown into one of the most trusted names in the industry.
+                  In 1995, David Martinez opened Frank's Auto Parts with a simple mission: provide mechanics and vehicle owners with reliable, quality-tested used auto parts at fair prices. What began as a modest operation in Dallas has grown into one of the most trusted names in the industry.
                 </p>
                 <p>
                   We've never lost sight of what matters most — helping people get their vehicles back on the road quickly and affordably. Every part that leaves our facility has been carefully inspected, tested, and verified to meet our strict quality standards.
                 </p>
                 <p>
-                  Today, we serve thousands of customers across all 50 states, from independent mechanics to large fleet operators. Our inventory has grown to over 15,000 parts, but our commitment to personal service and quality remains unchanged.
+                  Today, we serve thousands of customers across all 50 states, from independent mechanics to large fleet operators. Our supply network is vast, but our commitment to personal service and quality remains unchanged.
                 </p>
                 <p>
-                  When you choose Brothers Auto Parts, you're not just buying a component — you're partnering with a team that genuinely cares about your success.
+                  When you choose Frank's Auto Parts, you're not just buying a component — you're partnering with a team that genuinely cares about your success.
                 </p>
               </div>
             </motion.div>
@@ -303,7 +303,7 @@ const AboutPage = () => {
               Meet our leadership
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The experienced team behind Brothers Auto Parts
+              The experienced team behind Frank's Auto Parts
             </p>
           </motion.div>
 
@@ -320,7 +320,7 @@ const AboutPage = () => {
                   <div className="aspect-square overflow-hidden">
                     <img 
                       src={member.image} 
-                      alt={`${member.name}, ${member.role} at Brothers Auto Parts`}
+                      alt={`${member.name}, ${member.role} at Frank's Auto Parts`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -348,7 +348,7 @@ const AboutPage = () => {
               Ready to experience the difference?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust Brothers Auto Parts
+              Join thousands of satisfied customers who trust Frank's Auto Parts
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -358,9 +358,9 @@ const AboutPage = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/inventory">
+              <Link to="/services">
                 <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-6 text-lg transition-all duration-200 active:scale-95">
-                  Browse inventory
+                  Our Services
                 </Button>
               </Link>
             </div>

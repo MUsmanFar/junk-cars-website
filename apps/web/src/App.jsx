@@ -6,7 +6,6 @@ import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
-import InventoryPage from './pages/InventoryPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import QuoteRequestPage from './pages/QuoteRequestPage.jsx';
 import FAQPage from './pages/FAQPage.jsx';
@@ -20,7 +19,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/inventory" element={<InventoryPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/quote-request" element={<QuoteRequestPage />} />
         <Route path="/faq" element={<FAQPage />} />

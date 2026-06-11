@@ -19,7 +19,7 @@ const FAQPage = () => {
       questions: [
         {
           question: 'How long have you been in business?',
-          answer: 'Brothers Auto Parts was founded in 1995 and has been serving customers for over 30 years. We started as a small family operation in Dallas and have grown into one of the most trusted used auto parts suppliers in the nation.'
+          answer: "Frank's Auto Parts was founded in 1995 and has been serving customers for over 30 years. We started as a small family operation in Dallas and have grown into one of the most trusted used auto parts suppliers in the nation."
         },
         {
           question: 'What types of vehicles do you have parts for?',
@@ -146,8 +146,8 @@ const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQ - Frequently asked questions about Brothers Auto Parts</title>
-        <meta name="description" content="Find answers to common questions about Brothers Auto Parts services, shipping, warranties, pricing, and more. Get the information you need." />
+        <title>FAQ - Frequently asked questions about Frank's Auto Parts</title>
+        <meta name="description" content="Find answers to common questions about Frank's Auto Parts services, shipping, warranties, pricing, and more. Get the information you need." />
       </Helmet>
 
       <Header />

@@ -12,16 +12,24 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center glow-shadow">
-                <span className="text-2xl font-bold text-white">BA</span>
-              </div>
-              <div>
-                <div className="text-lg font-bold text-white">Brothers Auto Parts</div>
-                <div className="text-xs text-muted-foreground">Since 1995</div>
+              {/* White background logo with metallic & 3D styling */}
+              <div className="relative flex items-center bg-white px-3.5 py-2 rounded-xl border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+                {/* Metallic 3D F icon */}
+                <div className="w-7 h-7 rounded bg-gradient-to-br from-slate-400 via-slate-100 to-slate-500 flex items-center justify-center shadow-[0_1px_3px_rgba(0,0,0,0.2)] border border-slate-300/50">
+                  <span className="text-sm font-black text-slate-800">F</span>
+                </div>
+                <div className="ml-2.5 flex flex-col text-left">
+                  <div className="text-xs font-extrabold tracking-tight text-slate-900 leading-none">
+                    FRANK'S
+                  </div>
+                  <div className="text-[8px] font-black tracking-widest text-slate-800/90 leading-none mt-0.5">
+                    AUTO PARTS
+                  </div>
+                </div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Your trusted source for quality used auto parts. Serving customers nationwide with reliable engines, transmissions, and hard-to-find components.
+              Your trusted source for premium auto parts and exceptional services. Serving customers nationwide with reliable engines, transmissions, and expert sales support.
             </p>
             <div className="flex items-center space-x-3">
               <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:bg-accent hover:text-white transition-all duration-200">
@@ -41,7 +49,6 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Home</Link></li>
               <li><Link to="/services" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Services</Link></li>
-              <li><Link to="/inventory" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Inventory</Link></li>
               <li><Link to="/about" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">About us</Link></li>
               <li><Link to="/faq" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">FAQ</Link></li>
               <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Contact</Link></li>
@@ -51,7 +58,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white mb-4 tracking-wide">Services</h3>
             <ul className="space-y-3">
-              <li><span className="text-sm text-muted-foreground">Used auto parts</span></li>
+              <li><span className="text-sm text-muted-foreground">Used auto parts sales</span></li>
               <li><span className="text-sm text-muted-foreground">Engines & transmissions</span></li>
               <li><span className="text-sm text-muted-foreground">Body parts & panels</span></li>
               <li><span className="text-sm text-muted-foreground">Wheels & tires</span></li>
@@ -74,7 +81,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:info@brothersautoparts.com" className="text-sm text-white hover:text-accent transition-colors duration-200">info@brothersautoparts.com</a>
+                  <a href="mailto:info@franksautoparts.com" className="text-sm text-white hover:text-accent transition-colors duration-200">info@franksautoparts.com</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
@@ -99,7 +106,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Brothers Auto Parts. All rights reserved.
+              © {currentYear} Frank's Auto Parts. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Privacy Policy</Link>

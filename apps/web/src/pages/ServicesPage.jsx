@@ -128,7 +128,7 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Services - Brothers Auto Parts quality used auto parts and nationwide shipping</title>
+        <title>Services - Frank's Auto Parts quality used auto parts and nationwide shipping</title>
         <meta name="description" content="Explore our comprehensive services: engines, transmissions, body parts, wheels, radiators, electrical components, and fast nationwide shipping." />
       </Helmet>
 
@@ -175,7 +175,7 @@ const ServicesPage = () => {
                 <div className="relative rounded-3xl overflow-hidden luxury-shadow group">
                   <img 
                     src={service.image} 
-                    alt={`${service.title} - Brothers Auto Parts service`}
+                    alt={`${service.title} - Frank's Auto Parts service`}
                     className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
@@ -221,9 +221,9 @@ const ServicesPage = () => {
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </Link>
-                  <Link to="/inventory">
+                  <Link to="/contact">
                     <Button variant="outline" className="border-border text-white hover:bg-muted transition-all duration-200 active:scale-95">
-                      Browse inventory
+                      Contact us
                     </Button>
                   </Link>
                 </div>

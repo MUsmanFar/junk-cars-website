@@ -126,14 +126,14 @@ const HomePage = () => {
     {
       name: 'Marcus Chen',
       role: 'Auto repair shop owner',
-      content: 'Brothers Auto Parts has been our go-to supplier for 8 years. Their inventory is massive, prices are fair, and parts always arrive on time. The quality is consistently excellent.',
+      content: "Frank's Auto Parts has been our go-to supplier for 8 years. Their service is fast, prices are fair, and parts always arrive on time. The quality is consistently excellent.",
       rating: 5,
       location: 'Houston, TX'
     },
     {
       name: 'Lucia Torres',
       role: 'Fleet manager',
-      content: 'Managing a fleet of 40 vehicles, I need reliable parts fast. Brothers delivers every time. Their team knows their inventory inside out and always finds what I need.',
+      content: 'Managing a fleet of 40 vehicles, I need reliable parts fast. Frank\'s delivers every time. Their team knows auto parts inside out and always finds what I need.',
       rating: 5,
       location: 'Phoenix, AZ'
     },
@@ -157,8 +157,8 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Brothers Auto Parts - Quality used auto parts since 1995</title>
-        <meta name="description" content="Trusted source for quality used auto parts. Engines, transmissions, body parts, wheels, and hard-to-find components shipped nationwide. 30+ years experience." />
+        <title>Frank's Auto Parts - Premium Auto Parts & Services since 1995</title>
+        <meta name="description" content="Trusted source for quality used auto parts and sales. Engines, transmissions, body parts, wheels, and hard-to-find components shipped nationwide. 30+ years experience." />
       </Helmet>
 
       <Header />
@@ -196,9 +196,9 @@ const HomePage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <Link to="/inventory">
+              <Link to="/services">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg glow-shadow-strong transition-all duration-200 active:scale-95">
-                  Find my part
+                  Our Services
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -343,10 +343,10 @@ const HomePage = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  Since 1995, Brothers Auto Parts has been the trusted source for quality used auto parts across the nation. What started as a small family operation in Dallas has grown into one of the most reliable suppliers in the industry.
+                  Since 1995, Frank's Auto Parts has been the trusted source for premium auto parts and customer sales across the nation. What started as a small family operation in Dallas has grown into one of the most reliable suppliers in the industry.
                 </p>
                 <p>
-                  We understand that when your vehicle needs a part, you need it fast and you need it right. That's why we've built an extensive inventory of over 15,000 tested and verified parts, ready to ship within 24 hours.
+                  We understand that when your vehicle needs a part, you need it fast and you need it right. That's why we've built a vast network of suppliers and tested components, ready to ship within 24 hours.
                 </p>
                 <p>
                   Our team brings decades of automotive expertise to every interaction. We don't just sell parts — we help you find the exact component your vehicle needs, backed by our commitment to quality and customer satisfaction.
@@ -433,101 +433,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
-              Find your part now
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Search our inventory by vehicle details
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-effect-strong rounded-3xl p-8 md:p-12 luxury-shadow"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">Make</label>
-                <Select>
-                  <SelectTrigger className="bg-background/50 border-border text-white">
-                    <SelectValue placeholder="Select make" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="ford">Ford</SelectItem>
-                    <SelectItem value="chevrolet">Chevrolet</SelectItem>
-                    <SelectItem value="toyota">Toyota</SelectItem>
-                    <SelectItem value="honda">Honda</SelectItem>
-                    <SelectItem value="nissan">Nissan</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">Model</label>
-                <Select>
-                  <SelectTrigger className="bg-background/50 border-border text-white">
-                    <SelectValue placeholder="Select model" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="f150">F-150</SelectItem>
-                    <SelectItem value="silverado">Silverado</SelectItem>
-                    <SelectItem value="camry">Camry</SelectItem>
-                    <SelectItem value="accord">Accord</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">Year</label>
-                <Select>
-                  <SelectTrigger className="bg-background/50 border-border text-white">
-                    <SelectValue placeholder="Select year" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="2024">2024</SelectItem>
-                    <SelectItem value="2023">2023</SelectItem>
-                    <SelectItem value="2022">2022</SelectItem>
-                    <SelectItem value="2021">2021</SelectItem>
-                    <SelectItem value="2020">2020</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">Part needed</label>
-                <Select>
-                  <SelectTrigger className="bg-background/50 border-border text-white">
-                    <SelectValue placeholder="Select part" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="engine">Engine</SelectItem>
-                    <SelectItem value="transmission">Transmission</SelectItem>
-                    <SelectItem value="body">Body parts</SelectItem>
-                    <SelectItem value="wheels">Wheels</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-            <Button className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg glow-shadow transition-all duration-200 active:scale-95">
-              <Search className="mr-2 w-5 h-5" />
-              Search inventory
-            </Button>
-          </motion.div>
-        </div>
-      </section>
 
       <section className="py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

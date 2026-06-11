@@ -51,9 +51,9 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@brothersautoparts.com',
+      details: 'info@franksautoparts.com',
       subtext: 'We respond within 24 hours',
-      link: 'mailto:info@brothersautoparts.com'
+      link: 'mailto:info@franksautoparts.com'
     },
     {
       icon: MapPin,
@@ -74,8 +74,8 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Brothers Auto Parts - Get in touch for auto parts inquiries</title>
-        <meta name="description" content="Contact Brothers Auto Parts for quality used auto parts. Call, email, or visit us in Dallas, Texas. Fast response times and expert support." />
+        <title>Contact Frank's Auto Parts - Get in touch for auto parts inquiries</title>
+        <meta name="description" content="Contact Frank's Auto Parts for quality used auto parts. Call, email, or visit us in Dallas, Texas. Fast response times and expert support." />
       </Helmet>
 
       <Header />
@@ -232,7 +232,7 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">Brothers Auto Parts</p>
+                      <p className="text-white font-medium">Frank's Auto Parts</p>
                       <p className="text-sm text-muted-foreground">Dallas, Texas</p>
                       <p className="text-sm text-muted-foreground">Serving nationwide</p>
                     </div>

@@ -136,8 +136,8 @@ const QuoteRequestPage = () => {
   return (
     <>
       <Helmet>
-        <title>Request a quote - Brothers Auto Parts fast quote service</title>
-        <meta name="description" content="Request a free quote for quality used auto parts. Fast 2-hour response time, transparent pricing, and expert support from Brothers Auto Parts." />
+        <title>Request a quote - Frank's Auto Parts fast quote service</title>
+        <meta name="description" content="Request a free quote for quality used auto parts. Fast 2-hour response time, transparent pricing, and expert support from Frank's Auto Parts." />
       </Helmet>
 
       <Header />

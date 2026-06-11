@@ -21,7 +21,6 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Inventory', path: '/inventory' },
     { name: 'About', path: '/about' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' }
@@ -38,12 +37,23 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center glow-shadow transition-all duration-300 group-hover:scale-110">
-              <span className="text-2xl font-bold text-white">BA</span>
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-xl font-bold text-white tracking-tight">Brothers Auto Parts</div>
-              <div className="text-xs text-muted-foreground tracking-wider">TRUSTED SINCE 1995</div>
+            {/* White background logo with metallic & 3D styling */}
+            <div className="relative flex items-center bg-white px-4 py-2.5 rounded-xl border border-slate-200/80 shadow-[0_4px_12px_rgba(0,0,0,0.15),_0_2px_4px_rgba(255,255,255,0.8)_inset,_0_-2px_4px_rgba(0,0,0,0.05)_inset] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+              {/* Metallic 3D F icon */}
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-400 via-slate-100 to-slate-500 flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.2)] border border-slate-300/50">
+                <span className="text-lg font-black text-slate-800 filter drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">F</span>
+              </div>
+              <div className="ml-3 flex flex-col text-left">
+                <div className="text-sm font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-950 leading-none">
+                  FRANK'S
+                </div>
+                <div className="text-[9px] font-black tracking-widest text-slate-800/90 leading-none mt-0.5">
+                  AUTO PARTS
+                </div>
+                <div className="text-[6px] font-bold tracking-[0.15em] text-slate-500 leading-none mt-0.5 uppercase">
+                  Service & Sales
+                </div>
+              </div>
             </div>
           </Link>
 
@@ -84,12 +94,18 @@ const Header = () => {
             <SheetContent side="right" className="w-[300px] bg-secondary border-border">
               <div className="flex flex-col space-y-6 mt-8">
                 <div className="flex items-center space-x-3 pb-6 border-b border-border">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                    <span className="text-lg font-bold text-white">BA</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-white">Brothers Auto Parts</div>
-                    <div className="text-xs text-muted-foreground">Since 1995</div>
+                  <div className="relative flex items-center bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-md">
+                    <div className="w-7 h-7 rounded bg-gradient-to-br from-slate-400 via-slate-100 to-slate-500 flex items-center justify-center shadow">
+                      <span className="text-sm font-black text-slate-800">F</span>
+                    </div>
+                    <div className="ml-2 flex flex-col text-left">
+                      <div className="text-xs font-extrabold text-slate-900 leading-none">
+                        FRANK'S
+                      </div>
+                      <div className="text-[8px] font-black text-slate-800 leading-none mt-0.5">
+                        AUTO PARTS
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -115,9 +131,9 @@ const Header = () => {
                     <Phone className="w-4 h-4" />
                     <span>(123) 456-7890</span>
                   </a>
-                  <a href="mailto:info@brothersautoparts.com" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
+                  <a href="mailto:info@franksautoparts.com" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
                     <Mail className="w-4 h-4" />
-                    <span>info@brothersautoparts.com</span>
+                    <span>info@franksautoparts.com</span>
                   </a>
                 </div>
 
