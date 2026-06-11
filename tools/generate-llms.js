@@ -2,48 +2,28 @@
 
 import fs from 'fs';
 import path from 'path';
-
-const CLEAN_CONTENT_REGEX = {
-	comments: /\/\*[\s\S]*?\*\/|\/\/.*$/gm,
-	templateLiterals: /`[\s\S]*?`/g,
-	strings: /'[^']*'|"[^"]*"/g,
-	jsxExpressions: /\{.*?\}/g,
-	htmlEntities: {
-		quot: /&quot;/g,
-		amp: /&amp;/g,
-		lt: /&lt;/g,
-		gt: /&gt;/g,
-		apos: /&apos;/g
-	}
-};
+import { pathToFileURL } from 'url';
 
 const EXTRACTION_REGEX = {
 	route: /<Route\s+[^>]*>/g,
-	path: /path=["']([^"']+)["']/,
+	path: /path=(["'])(.*?)\1/,
 	element: /element=\{<(\w+)[^}]*\/?\s*>\}/,
 	helmet: /<Helmet[^>]*?>([\s\S]*?)<\/Helmet>/i,
 	helmetTest: /<Helmet[\s\S]*?<\/Helmet>/i,
 	title: /<title[^>]*?>\s*(.*?)\s*<\/title>/i,
-	description: /<meta\s+name=["']description["']\s+content=["'](.*?)["']/i
+	description: /<meta\s+name=(["'])description\1\s+content=(["'])(.*?)\2/i
 };
-
-function cleanContent(content) {
-	return content
-		.replace(CLEAN_CONTENT_REGEX.comments, '')
-		.replace(CLEAN_CONTENT_REGEX.templateLiterals, '""')
-		.replace(CLEAN_CONTENT_REGEX.strings, '""');
-}
 
 function cleanText(text) {
 	if (!text) return text;
 
 	return text
-		.replace(CLEAN_CONTENT_REGEX.jsxExpressions, '')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.quot, '"')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.amp, '&')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.lt, '<')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.gt, '>')
-		.replace(CLEAN_CONTENT_REGEX.htmlEntities.apos, "'")
+		.replace(/\{.*?\}/g, '')
+		.replace(/&quot;/g, '"')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&apos;/g, "'")
 		.trim();
 }
 
@@ -68,7 +48,7 @@ function extractRoutes(appJsxPath) {
 				if (isIndex) {
 					routePath = '/';
 				} else if (pathMatch) {
-					routePath = pathMatch[1].startsWith('/') ? pathMatch[1] : `/${pathMatch[1]}`;
+					routePath = pathMatch[2].startsWith('/') ? pathMatch[2] : `/${pathMatch[2]}`;
 				}
 
 				routes.set(componentName, routePath);
@@ -86,9 +66,7 @@ function findReactFiles(dir) {
 }
 
 function extractHelmetData(content, filePath, routes) {
-	const cleanedContent = cleanContent(content);
-
-	if (!EXTRACTION_REGEX.helmetTest.test(cleanedContent)) {
+	if (!EXTRACTION_REGEX.helmetTest.test(content)) {
 		return null;
 	}
 
@@ -100,10 +78,10 @@ function extractHelmetData(content, filePath, routes) {
 	const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
 
 	const title = cleanText(titleMatch?.[1]);
-	const description = cleanText(descMatch?.[1]);
+	const description = cleanText(descMatch?.[3]);
 
 	const fileName = path.basename(filePath, path.extname(filePath));
-	const url = routes.length && routes.has(fileName)
+	const url = routes.size && routes.has(fileName)
 		? routes.get(fileName)
 		: generateFallbackUrl(fileName);
 
@@ -167,7 +145,6 @@ function main() {
 		process.exit(1);
 	}
 
-
 	const llmsTxtContent = generateLlmsTxt(pages);
 	const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
 
@@ -175,7 +152,7 @@ function main() {
 	fs.writeFileSync(outputPath, llmsTxtContent, 'utf8');
 }
 
-const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+const isMainModule = import.meta.url === pathToFileURL(process.argv[1]).href;
 
 if (isMainModule) {
 	main();
