@@ -74,9 +74,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+1234567890" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
+            <a href="tel:+18168822503" className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
               <Phone className="w-4 h-4" />
-              <span>(123) 456-7890</span>
+              <span>816-882-2503</span>
             </a>
             <Link to="/quote-request">
               <Button className="bg-accent hover:bg-accent/90 text-white glow-shadow transition-all duration-200 active:scale-95">
@@ -127,13 +127,13 @@ const Header = () => {
                 </nav>
 
                 <div className="pt-6 border-t border-border space-y-3">
-                  <a href="tel:+1234567890" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
+                  <a href="tel:+18168822503" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
                     <Phone className="w-4 h-4" />
-                    <span>(123) 456-7890</span>
+                    <span>816-882-2503</span>
                   </a>
-                  <a href="mailto:info@franksautoparts.com" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
+                  <a href="mailto:FrankAutoParts390@gmail.com" className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-accent transition-colors duration-200">
                     <Mail className="w-4 h-4" />
-                    <span>info@franksautoparts.com</span>
+                    <span>FrankAutoParts390@gmail.com</span>
                   </a>
                 </div>
 

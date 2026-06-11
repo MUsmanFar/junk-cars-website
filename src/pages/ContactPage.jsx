@@ -44,16 +44,16 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '(123) 456-7890',
+      details: '816-882-2503',
       subtext: 'Mon-Fri: 8am - 6pm, Sat: 9am - 4pm',
-      link: 'tel:+1234567890'
+      link: 'tel:+18168822503'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@franksautoparts.com',
+      details: 'FrankAutoParts390@gmail.com',
       subtext: 'We respond within 24 hours',
-      link: 'mailto:info@franksautoparts.com'
+      link: 'mailto:FrankAutoParts390@gmail.com'
     },
     {
       icon: MapPin,
@@ -184,7 +184,7 @@ const ContactPage = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="(123) 456-7890"
+                    placeholder="816-882-2503"
                     className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>

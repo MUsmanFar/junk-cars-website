@@ -207,7 +207,7 @@ const HomePage = () => {
                   Request quote
                 </Button>
               </Link>
-              <a href="tel:+1234567890">
+              <a href="tel:+18168822503">
                 <Button size="lg" variant="outline" className="border-border text-slate-900 hover:bg-muted px-8 py-6 text-lg transition-all duration-200 active:scale-95">
                   <Phone className="mr-2 w-5 h-5" />
                   Call now
@@ -612,7 +612,7 @@ const HomePage = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+1234567890">
+              <a href="tel:+18168822503">
                 <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-6 text-lg transition-all duration-200 active:scale-95">
                   <Phone className="mr-2 w-5 h-5" />
                   Call now

@@ -345,7 +345,7 @@ const QuoteRequestPage = () => {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="(123) 456-7890"
+                          placeholder="816-882-2503"
                           className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
@@ -407,8 +407,8 @@ const QuoteRequestPage = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       Call us directly for immediate assistance
                     </p>
-                    <a href="tel:+1234567890" className="text-accent font-semibold hover:underline">
-                      (123) 456-7890
+                    <a href="tel:+18168822503" className="text-accent font-semibold hover:underline">
+                      816-882-2503
                     </a>
                   </div>
                 </div>
