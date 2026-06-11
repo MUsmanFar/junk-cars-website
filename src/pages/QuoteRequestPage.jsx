@@ -117,7 +117,7 @@ const QuoteRequestPage = () => {
   const faqs = [
     {
       question: 'How quickly will I receive my quote?',
-      answer: 'We provide quotes within 2 hours during business hours (Mon-Fri 8am-6pm, Sat 9am-4pm). Requests submitted outside business hours will be processed the next business day.'
+      answer: 'We provide quotes within 2 hours during business hours (Mon-Fri 8am-5pm, Sat 9am-5pm CST/CDT). Requests submitted outside business hours will be processed the next business day.'
     },
     {
       question: 'Do you need my VIN number?',

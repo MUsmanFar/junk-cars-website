@@ -199,7 +199,7 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  <div className="hidden lg:block w-16 h-16 rounded-full bg-accent flex-shrink-0 flex items-center justify-center glow-shadow z-10">
+                  <div className="hidden lg:flex w-16 h-16 rounded-full bg-accent flex-shrink-0 items-center justify-center glow-shadow z-10">
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
 

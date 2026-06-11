@@ -45,7 +45,7 @@ const ContactPage = () => {
       icon: Phone,
       title: 'Phone',
       details: '816-882-2503',
-      subtext: 'Mon-Fri: 8am - 6pm, Sat: 9am - 4pm',
+      subtext: 'Mon-Fri: 8am - 5pm, Sat: 9am - 5pm (CST/CDT)',
       link: 'tel:+18168822503'
     },
     {
@@ -58,15 +58,15 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: 'Location',
-      details: 'Dallas, Texas',
-      subtext: 'Serving all 50 states',
+      details: '7910 E. 17th Street',
+      subtext: 'Kansas City, MO 64126',
       link: null
     },
     {
       icon: Clock,
       title: 'Business hours',
-      details: 'Mon-Fri: 8am - 6pm',
-      subtext: 'Sat: 9am - 4pm, Sun: Closed',
+      details: 'Mon-Fri: 8am - 5pm',
+      subtext: 'Sat: 9am - 5pm (CST/CDT)',
       link: null
     }
   ];
@@ -233,8 +233,8 @@ const ContactPage = () => {
                     <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="text-slate-900 font-medium">Frank's Auto Parts</p>
-                      <p className="text-sm text-muted-foreground">Dallas, Texas</p>
-                      <p className="text-sm text-muted-foreground">Serving nationwide</p>
+                      <p className="text-sm text-muted-foreground">7910 E. 17th Street</p>
+                      <p className="text-sm text-muted-foreground">Kansas City, MO 64126</p>
                     </div>
                   </div>
                 </div>

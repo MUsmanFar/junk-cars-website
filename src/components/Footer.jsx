@@ -88,15 +88,16 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-sm text-foreground">Dallas, Texas</p>
+                  <p className="text-sm text-foreground">7910 E. 17th Street</p>
+                  <p className="text-sm text-foreground">Kansas City, MO 64126</p>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Hours</p>
-                  <p className="text-sm text-foreground">Mon-Fri: 8am - 6pm</p>
-                  <p className="text-sm text-foreground">Sat: 9am - 4pm</p>
+                  <p className="text-sm text-foreground">Mon-Fri: 8am - 5pm</p>
+                  <p className="text-sm text-foreground">Sat: 9am - 5pm (CST/CDT)</p>
                 </div>
               </li>
             </ul>

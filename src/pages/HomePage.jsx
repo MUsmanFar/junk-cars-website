@@ -546,7 +546,7 @@ const HomePage = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Headquarters</h3>
-                    <p className="text-muted-foreground">Dallas, Texas - Central location for fast nationwide shipping</p>
+                    <p className="text-muted-foreground">7910 E. 17th Street, Kansas City, MO 64126 - Central location for fast nationwide shipping</p>
                   </div>
                 </div>
 
