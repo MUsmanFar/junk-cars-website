@@ -164,7 +164,7 @@ const FAQPage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               Help center
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Frequently asked questions
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -189,7 +189,7 @@ const FAQPage = () => {
               placeholder="Search frequently asked questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 py-6 bg-background/50 border-border text-white placeholder:text-muted-foreground text-lg"
+              className="pl-12 py-6 bg-background/50 border-border text-foreground placeholder:text-muted-foreground text-lg"
             />
           </motion.div>
         </div>
@@ -207,7 +207,7 @@ const FAQPage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                 >
-                  <h2 className="text-3xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
                     {category.category}
                   </h2>
                   <Accordion type="single" collapsible className="space-y-4">
@@ -218,7 +218,7 @@ const FAQPage = () => {
                         className="glass-effect rounded-2xl border-border overflow-hidden"
                       >
                         <AccordionTrigger className="px-6 py-5 text-left hover:no-underline hover:bg-muted/50 transition-colors duration-200">
-                          <span className="text-lg font-semibold text-white pr-4">{faq.question}</span>
+                          <span className="text-lg font-semibold text-slate-900 pr-4">{faq.question}</span>
                         </AccordionTrigger>
                         <AccordionContent className="px-6 pb-5 pt-2">
                           <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
@@ -252,7 +252,7 @@ const FAQPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Still have questions?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">

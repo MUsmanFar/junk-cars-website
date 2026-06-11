@@ -146,7 +146,7 @@ const ServicesPage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               What we offer
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Our services
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -182,7 +182,7 @@ const ServicesPage = () => {
                   <div className="absolute bottom-8 left-8 right-8">
                     <div className="glass-effect-strong rounded-2xl p-6">
                       <div className="text-4xl font-bold text-accent mb-2 font-variant-tabular">{service.stats.value}</div>
-                      <div className="text-white font-semibold">{service.stats.label}</div>
+                      <div className="text-slate-900 font-semibold">{service.stats.label}</div>
                     </div>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ const ServicesPage = () => {
                 <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
                   <service.icon className="w-8 h-8 text-accent" />
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
                   {service.title}
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -222,7 +222,7 @@ const ServicesPage = () => {
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button variant="outline" className="border-border text-white hover:bg-muted transition-all duration-200 active:scale-95">
+                    <Button variant="outline" className="border-border text-slate-900 hover:bg-muted transition-all duration-200 active:scale-95">
                       Contact us
                     </Button>
                   </Link>
@@ -241,7 +241,7 @@ const ServicesPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Ready to get started?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">

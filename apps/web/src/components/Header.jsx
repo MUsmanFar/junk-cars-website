@@ -65,7 +65,7 @@ const Header = () => {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
                     ? 'bg-accent text-white'
-                    : 'text-muted-foreground hover:text-white hover:bg-muted'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
               >
                 {link.name}
@@ -87,7 +87,7 @@ const Header = () => {
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-white">
+              <Button variant="ghost" size="icon" className="text-foreground">
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
@@ -118,7 +118,7 @@ const Header = () => {
                       className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                         isActive(link.path)
                           ? 'bg-accent text-white'
-                          : 'text-muted-foreground hover:text-white hover:bg-muted'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                       }`}
                     >
                       {link.name}

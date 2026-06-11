@@ -186,7 +186,7 @@ const HomePage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               Trusted since 1995
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               QUALITY USED AUTO PARTS
               <br />
               <span className="text-accent">BUILT ON TRUST</span>
@@ -208,7 +208,7 @@ const HomePage = () => {
                 </Button>
               </Link>
               <a href="tel:+1234567890">
-                <Button size="lg" variant="outline" className="border-border text-white hover:bg-muted px-8 py-6 text-lg transition-all duration-200 active:scale-95">
+                <Button size="lg" variant="outline" className="border-border text-slate-900 hover:bg-muted px-8 py-6 text-lg transition-all duration-200 active:scale-95">
                   <Phone className="mr-2 w-5 h-5" />
                   Call now
                 </Button>
@@ -225,7 +225,7 @@ const HomePage = () => {
                   className="glass-effect rounded-2xl p-6 hover-lift"
                 >
                   <stat.icon className="w-8 h-8 text-accent mb-3 mx-auto" />
-                  <div className="text-3xl font-bold text-white mb-1 font-variant-tabular">{stat.value}</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-1 font-variant-tabular">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </motion.div>
               ))}
@@ -243,7 +243,7 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Browse by category
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -263,9 +263,9 @@ const HomePage = () => {
                 <Card className={`glass-effect border-border hover-3d luxury-shadow group cursor-pointer h-full`}>
                   <CardContent className="p-8">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <category.icon className="w-8 h-8 text-white" />
+                      <category.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{category.name}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{category.name}</h3>
                     <p className="text-muted-foreground leading-relaxed">{category.description}</p>
                     <div className="mt-6 flex items-center text-accent font-medium group-hover:translate-x-2 transition-transform duration-300">
                       Browse parts
@@ -288,7 +288,7 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Why customers choose us
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -312,7 +312,7 @@ const HomePage = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-slate-900">{item.title}</h3>
                       <span className="text-sm font-semibold text-accent px-3 py-1 rounded-full bg-accent/10">
                         {item.stat}
                       </span>
@@ -338,7 +338,7 @@ const HomePage = () => {
               <div className="inline-block mb-6 px-4 py-2 rounded-full bg-accent/10 text-sm font-medium text-accent">
                 Our story
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
                 Built on trust, driven by quality
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -378,7 +378,7 @@ const HomePage = () => {
               </div>
               <div className="absolute -bottom-8 -left-8 glass-effect-strong rounded-2xl p-6 max-w-xs">
                 <div className="text-4xl font-bold text-accent mb-2 font-variant-tabular">30+</div>
-                <div className="text-white font-semibold mb-1">Years of experience</div>
+                <div className="text-slate-900 font-semibold mb-1">Years of experience</div>
                 <div className="text-sm text-muted-foreground">Serving the automotive industry since 1995</div>
               </div>
             </motion.div>
@@ -395,7 +395,7 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               How it works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -420,7 +420,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div className="flex-1 glass-effect rounded-2xl p-8 hover-lift">
-                    <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{step.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                   </div>
                 </div>
@@ -444,7 +444,7 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               What our customers say
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -466,12 +466,12 @@ const HomePage = () => {
                   <Star key={i} className="w-5 h-5 text-accent fill-accent" />
                 ))}
               </div>
-              <p className="text-xl text-white leading-relaxed mb-8">
+              <p className="text-xl text-slate-800 leading-relaxed mb-8">
                 "{testimonials[currentTestimonial].content}"
               </p>
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-white text-lg">{testimonials[currentTestimonial].name}</div>
+                  <div className="font-bold text-slate-900 text-lg">{testimonials[currentTestimonial].name}</div>
                   <div className="text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</div>
                   <div className="text-sm text-accent flex items-center mt-1">
                     <MapPin className="w-3 h-3 mr-1" />
@@ -523,7 +523,7 @@ const HomePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Serving customers nationwide
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -545,7 +545,7 @@ const HomePage = () => {
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Headquarters</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Headquarters</h3>
                     <p className="text-muted-foreground">Dallas, Texas - Central location for fast nationwide shipping</p>
                   </div>
                 </div>
@@ -555,7 +555,7 @@ const HomePage = () => {
                     <Truck className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Fast delivery</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Fast delivery</h3>
                     <p className="text-muted-foreground">2-3 business days to most locations with tracking included</p>
                   </div>
                 </div>
@@ -565,7 +565,7 @@ const HomePage = () => {
                     <CheckCircle className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">All 50 states</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">All 50 states</h3>
                     <p className="text-muted-foreground">No matter where you are, we can get parts to you quickly</p>
                   </div>
                 </div>
@@ -598,7 +598,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Need the right part fast?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">

@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 tracking-wide">Quick links</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-4 tracking-wide">Quick links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Home</Link></li>
               <li><Link to="/services" className="text-sm text-muted-foreground hover:text-accent transition-colors duration-200">Services</Link></li>
@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 tracking-wide">Services</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-4 tracking-wide">Services</h3>
             <ul className="space-y-3">
               <li><span className="text-sm text-muted-foreground">Used auto parts sales</span></li>
               <li><span className="text-sm text-muted-foreground">Engines & transmissions</span></li>
@@ -68,35 +68,35 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4 tracking-wide">Contact info</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-4 tracking-wide">Contact info</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <a href="tel:+1234567890" className="text-sm text-white hover:text-accent transition-colors duration-200">(123) 456-7890</a>
+                  <a href="tel:+1234567890" className="text-sm text-foreground hover:text-accent transition-colors duration-200">(123) 456-7890</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:info@franksautoparts.com" className="text-sm text-white hover:text-accent transition-colors duration-200">info@franksautoparts.com</a>
+                  <a href="mailto:info@franksautoparts.com" className="text-sm text-foreground hover:text-accent transition-colors duration-200">info@franksautoparts.com</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-sm text-white">Dallas, Texas</p>
+                  <p className="text-sm text-foreground">Dallas, Texas</p>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Clock className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground">Hours</p>
-                  <p className="text-sm text-white">Mon-Fri: 8am - 6pm</p>
-                  <p className="text-sm text-white">Sat: 9am - 4pm</p>
+                  <p className="text-sm text-foreground">Mon-Fri: 8am - 6pm</p>
+                  <p className="text-sm text-foreground">Sat: 9am - 4pm</p>
                 </div>
               </li>
             </ul>

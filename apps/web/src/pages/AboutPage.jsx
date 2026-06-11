@@ -101,7 +101,7 @@ const AboutPage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               Our story
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               About Frank's Auto Parts
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -137,7 +137,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
                 Built on a foundation of trust and quality
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -168,7 +168,7 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Our journey
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -194,7 +194,7 @@ const AboutPage = () => {
                   <div className="flex-1 lg:text-right" style={{ textAlign: index % 2 === 0 ? 'right' : 'left' }}>
                     <div className="glass-effect rounded-2xl p-8 hover-lift luxury-shadow inline-block max-w-md">
                       <div className="text-4xl font-bold text-accent mb-3 font-variant-tabular">{milestone.year}</div>
-                      <h3 className="text-2xl font-bold text-white mb-3">{milestone.title}</h3>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">{milestone.title}</h3>
                       <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               By the numbers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -242,7 +242,7 @@ const AboutPage = () => {
                     <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
                       <stat.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <div className="text-5xl font-bold text-white mb-3 font-variant-tabular">{stat.value}</div>
+                    <div className="text-5xl font-bold text-slate-900 mb-3 font-variant-tabular">{stat.value}</div>
                     <div className="text-muted-foreground">{stat.label}</div>
                   </CardContent>
                 </Card>
@@ -261,7 +261,7 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Our values
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -282,7 +282,7 @@ const AboutPage = () => {
                 <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6">
                   <value.icon className="w-8 h-8 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
@@ -299,7 +299,7 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ letterSpacing: '-0.02em' }}>
               Meet our leadership
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -325,7 +325,7 @@ const AboutPage = () => {
                     />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
                     <div className="text-sm text-accent mb-4 font-medium">{member.role}</div>
                     <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
                   </CardContent>
@@ -344,7 +344,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Ready to experience the difference?
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">

@@ -154,7 +154,7 @@ const QuoteRequestPage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               2-hour response time
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Request a quote
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -180,7 +180,7 @@ const QuoteRequestPage = () => {
                     <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                       <guarantee.icon className="w-7 h-7 text-accent" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{guarantee.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{guarantee.title}</h3>
                     <p className="text-sm text-muted-foreground">{guarantee.description}</p>
                   </CardContent>
                 </Card>
@@ -197,16 +197,16 @@ const QuoteRequestPage = () => {
               className="lg:col-span-2"
             >
               <div className="glass-effect-strong rounded-3xl p-8 md:p-12 luxury-shadow">
-                <h2 className="text-3xl font-bold text-white mb-8">Quote request form</h2>
+                <h2 className="text-3xl font-bold text-slate-900 mb-8">Quote request form</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-4">Vehicle information</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-4">Vehicle information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="make" className="block text-sm font-medium text-white mb-2">Make *</label>
+                        <label htmlFor="make" className="block text-sm font-medium text-slate-900 mb-2">Make *</label>
                         <Select value={formData.make} onValueChange={(value) => handleSelectChange('make', value)} required>
-                          <SelectTrigger className="bg-background/50 border-border text-white">
+                          <SelectTrigger className="bg-background/50 border-border text-foreground">
                             <SelectValue placeholder="Select make" />
                           </SelectTrigger>
                           <SelectContent>
@@ -221,7 +221,7 @@ const QuoteRequestPage = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="model" className="block text-sm font-medium text-white mb-2">Model *</label>
+                        <label htmlFor="model" className="block text-sm font-medium text-slate-900 mb-2">Model *</label>
                         <Input
                           id="model"
                           name="model"
@@ -230,14 +230,14 @@ const QuoteRequestPage = () => {
                           value={formData.model}
                           onChange={handleChange}
                           placeholder="e.g., F-150, Camry"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="year" className="block text-sm font-medium text-white mb-2">Year *</label>
+                        <label htmlFor="year" className="block text-sm font-medium text-slate-900 mb-2">Year *</label>
                         <Select value={formData.year} onValueChange={(value) => handleSelectChange('year', value)} required>
-                          <SelectTrigger className="bg-background/50 border-border text-white">
+                          <SelectTrigger className="bg-background/50 border-border text-foreground">
                             <SelectValue placeholder="Select year" />
                           </SelectTrigger>
                           <SelectContent>
@@ -254,7 +254,7 @@ const QuoteRequestPage = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="vin" className="block text-sm font-medium text-white mb-2">VIN number (optional)</label>
+                        <label htmlFor="vin" className="block text-sm font-medium text-slate-900 mb-2">VIN number (optional)</label>
                         <Input
                           id="vin"
                           name="vin"
@@ -262,19 +262,19 @@ const QuoteRequestPage = () => {
                           value={formData.vin}
                           onChange={handleChange}
                           placeholder="17-digit VIN"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-4">Part information</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-4">Part information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="partCategory" className="block text-sm font-medium text-white mb-2">Part category *</label>
+                        <label htmlFor="partCategory" className="block text-sm font-medium text-slate-900 mb-2">Part category *</label>
                         <Select value={formData.partCategory} onValueChange={(value) => handleSelectChange('partCategory', value)} required>
-                          <SelectTrigger className="bg-background/50 border-border text-white">
+                          <SelectTrigger className="bg-background/50 border-border text-foreground">
                             <SelectValue placeholder="Select category" />
                           </SelectTrigger>
                           <SelectContent>
@@ -290,7 +290,7 @@ const QuoteRequestPage = () => {
                       </div>
 
                       <div>
-                        <label htmlFor="quantity" className="block text-sm font-medium text-white mb-2">Quantity *</label>
+                        <label htmlFor="quantity" className="block text-sm font-medium text-slate-900 mb-2">Quantity *</label>
                         <Input
                           id="quantity"
                           name="quantity"
@@ -299,12 +299,12 @@ const QuoteRequestPage = () => {
                           required
                           value={formData.quantity}
                           onChange={handleChange}
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
 
                       <div className="md:col-span-2">
-                        <label htmlFor="specificPart" className="block text-sm font-medium text-white mb-2">Specific part needed *</label>
+                        <label htmlFor="specificPart" className="block text-sm font-medium text-slate-900 mb-2">Specific part needed *</label>
                         <Input
                           id="specificPart"
                           name="specificPart"
@@ -313,17 +313,17 @@ const QuoteRequestPage = () => {
                           value={formData.specificPart}
                           onChange={handleChange}
                           placeholder="e.g., Front passenger door, 5.0L V8 engine"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-4">Contact information</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-4">Contact information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Name *</label>
+                        <label htmlFor="name" className="block text-sm font-medium text-slate-900 mb-2">Name *</label>
                         <Input
                           id="name"
                           name="name"
@@ -332,12 +332,12 @@ const QuoteRequestPage = () => {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Your full name"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">Phone *</label>
+                        <label htmlFor="phone" className="block text-sm font-medium text-slate-900 mb-2">Phone *</label>
                         <Input
                           id="phone"
                           name="phone"
@@ -346,12 +346,12 @@ const QuoteRequestPage = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="(123) 456-7890"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
 
                       <div className="md:col-span-2">
-                        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email *</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-slate-900 mb-2">Email *</label>
                         <Input
                           id="email"
                           name="email"
@@ -360,12 +360,12 @@ const QuoteRequestPage = () => {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="your.email@example.com"
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                         />
                       </div>
 
                       <div className="md:col-span-2">
-                        <label htmlFor="additionalInfo" className="block text-sm font-medium text-white mb-2">Additional information (optional)</label>
+                        <label htmlFor="additionalInfo" className="block text-sm font-medium text-slate-900 mb-2">Additional information (optional)</label>
                         <Textarea
                           id="additionalInfo"
                           name="additionalInfo"
@@ -373,7 +373,7 @@ const QuoteRequestPage = () => {
                           onChange={handleChange}
                           placeholder="Any additional details that might help us provide an accurate quote..."
                           rows={4}
-                          className="bg-background/50 border-border text-white placeholder:text-muted-foreground resize-none"
+                          className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground resize-none"
                         />
                       </div>
                     </div>
@@ -403,7 +403,7 @@ const QuoteRequestPage = () => {
                     <Phone className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white mb-2">Need help now?</h3>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">Need help now?</h3>
                     <p className="text-sm text-muted-foreground mb-4">
                       Call us directly for immediate assistance
                     </p>
@@ -415,7 +415,7 @@ const QuoteRequestPage = () => {
               </div>
 
               <div className="glass-effect rounded-3xl p-8 luxury-shadow">
-                <h3 className="text-lg font-bold text-white mb-4">What happens next?</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">What happens next?</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -439,11 +439,11 @@ const QuoteRequestPage = () => {
               </div>
 
               <div className="glass-effect rounded-3xl p-8 luxury-shadow">
-                <h3 className="text-lg font-bold text-white mb-4">Common questions</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Common questions</h3>
                 <div className="space-y-4">
                   {faqs.slice(0, 2).map((faq, index) => (
                     <div key={index}>
-                      <h4 className="text-sm font-semibold text-white mb-2">{faq.question}</h4>
+                      <h4 className="text-sm font-semibold text-slate-900 mb-2">{faq.question}</h4>
                       <p className="text-sm text-muted-foreground">{faq.answer}</p>
                     </div>
                   ))}

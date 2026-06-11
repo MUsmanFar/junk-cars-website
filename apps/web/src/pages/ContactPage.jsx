@@ -92,7 +92,7 @@ const ContactPage = () => {
             <div className="inline-block mb-6 px-4 py-2 rounded-full glass-effect text-sm font-medium text-accent">
               We're here to help
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Get in touch
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -118,13 +118,13 @@ const ContactPage = () => {
                     <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
                       <info.icon className="w-7 h-7 text-accent" />
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-2 uppercase tracking-wide">{info.title}</h3>
+                    <h3 className="text-sm font-semibold text-slate-900 mb-2 uppercase tracking-wide">{info.title}</h3>
                     {info.link ? (
-                      <a href={info.link} className="text-lg font-bold text-white hover:text-accent transition-colors duration-200 block mb-1">
+                      <a href={info.link} className="text-lg font-bold text-slate-900 hover:text-accent transition-colors duration-200 block mb-1">
                         {info.details}
                       </a>
                     ) : (
-                      <div className="text-lg font-bold text-white mb-1">{info.details}</div>
+                      <div className="text-lg font-bold text-slate-900 mb-1">{info.details}</div>
                     )}
                     <p className="text-sm text-muted-foreground">{info.subtext}</p>
                   </CardContent>
@@ -140,7 +140,7 @@ const ContactPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
                 Send us a message
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -149,7 +149,7 @@ const ContactPage = () => {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-900 mb-2">Name</label>
                   <Input
                     id="name"
                     name="name"
@@ -158,12 +158,12 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                    className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-900 mb-2">Email</label>
                   <Input
                     id="email"
                     name="email"
@@ -172,12 +172,12 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your.email@example.com"
-                    className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                    className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">Phone</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-900 mb-2">Phone</label>
                   <Input
                     id="phone"
                     name="phone"
@@ -185,12 +185,12 @@ const ContactPage = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="(123) 456-7890"
-                    className="bg-background/50 border-border text-white placeholder:text-muted-foreground"
+                    className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-900 mb-2">Message</label>
                   <Textarea
                     id="message"
                     name="message"
@@ -199,7 +199,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     placeholder="Tell us about the part you need or any questions you have..."
                     rows={6}
-                    className="bg-background/50 border-border text-white placeholder:text-muted-foreground resize-none"
+                    className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground resize-none"
                   />
                 </div>
 
@@ -221,7 +221,7 @@ const ContactPage = () => {
               className="space-y-8"
             >
               <div className="glass-effect rounded-3xl p-8 luxury-shadow">
-                <h3 className="text-2xl font-bold text-white mb-6">Visit our location</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Visit our location</h3>
                 <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center mb-6">
                   <div className="text-center">
                     <MapPin className="w-16 h-16 text-accent mx-auto mb-4" />
@@ -232,7 +232,7 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">Frank's Auto Parts</p>
+                      <p className="text-slate-900 font-medium">Frank's Auto Parts</p>
                       <p className="text-sm text-muted-foreground">Dallas, Texas</p>
                       <p className="text-sm text-muted-foreground">Serving nationwide</p>
                     </div>
@@ -246,7 +246,7 @@ const ContactPage = () => {
                     <MessageSquare className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Response time guarantee</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Response time guarantee</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       We respond to all inquiries within 24 hours during business days. For urgent part requests, call us directly for immediate assistance.
                     </p>
@@ -255,7 +255,7 @@ const ContactPage = () => {
               </div>
 
               <div className="glass-effect rounded-3xl p-8 luxury-shadow">
-                <h3 className="text-xl font-bold text-white mb-4">Need a quote instead?</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Need a quote instead?</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   If you know exactly what part you need, use our quote request form for faster service.
                 </p>
